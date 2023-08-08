@@ -1,0 +1,32 @@
+name: Generate resume.png preview
+on:
+  push:
+    paths:
+      - "resume.pdf"
+jobs:
+  generate_resume_preview:
+    runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    name: Generate resume.png from resume.pdf and commit & push it
+    steps:
+      - name: Checkout code
+        uses: nschloe/action-cached-lfs-checkout@v1.2.1
+
+      - name: Install dependencies
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: poppler-utils
+          version: 1.0
+
+      - name: Build resume.png
+        run: |
+          pdftoppm -png -rx 300 -ry 300 -f 1 -l 1 resume.pdf resume
+          mv resume-1.png resume.png
+
+      - name: Commit & push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Generate resume.png preview
