@@ -12,8 +12,12 @@ jobs:
       contents: write
     name: Generate resume.png from resume.pdf and commit & push it
     steps:
-      - name: Checkout code
-        uses: nschloe/action-cached-lfs-checkout@v1.2.1
+      - name: Checkout github repo (+ download lfs dependencies)
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Checkout LFS objects
+        run: git lfs checkout
 
       - name: Install dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
@@ -27,6 +31,6 @@ jobs:
           mv resume-1.png resume.png
 
       - name: Commit & push
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Generate resume.png preview
