@@ -3,7 +3,7 @@
 % Author : Mateo Wang
 % Based off of: https://github.com/jakegut/resume
 % License : MIT
-%------------------------
+%-------------------------
 
 \documentclass[letterpaper,11pt]{article}
 
@@ -45,6 +45,9 @@
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
+
+% Set footskip to minimum recommended value
+\setlength{\footskip}{4.08003pt}
 
 \urlstyle{same}
 
@@ -112,7 +115,8 @@
 % \end{tabular*}
 
 \begin{center}
-  \textbf{\Huge \scshape Mateo Wang} \\ \vspace{1pt}
+  \textbf{\Huge Mateo Wang} \\ \vspace{1pt}
+  % I don't have the phone # link to tel:4089136163 because most PDF viewers don't support it
   \small(408) 913-6163 $|$ \href{mailto:hey@mateowang.dev}{\underline{hey@mateowang.dev}} $|$
   \href{https://linkedin.com/in/mateo-wang}{\underline{linkedin.com/in/mateo-wang}} $|$
   \href{https://github.com/SwiftWinds}{\underline{github.com/SwiftWinds}} $|$
@@ -120,25 +124,28 @@
 \end{center}
 
 
-%-----------EDUCATION-----------
-\section{Education}
-\resumeSubHeadingListStart
-\resumeSubheading
-{UC Santa Barbara}{3.71 GPA $|$ Aug. 2020 -- Jun. 2024}
-{Bachelor of Science in Computer Science, Technology Management Certificate}{Santa Barbara, CA}
-\resumeSubHeadingListEnd
-
-
 %-----------EXPERIENCE-----------
 \section{Experience}
 \resumeSubHeadingListStart
 
 \resumeSubheading
+{Founding Engineer}{Aug. 2024 -- Present}
+{Alpha Design AI, Inc.}{Goleta, CA}
+\resumeItemListStart
+\resumeItem{Built landing page with advanced anti-spam filtering, generating \textbf{200+} leads in 6 months with \textbf{\textless1\%} spam rate.}
+\resumeItem{Developed Next.js web dashboard with Auth0 RBAC, enabling usage tracking and user management.}
+\resumeItem{Automated CI/CD pipelines using GitHub Actions, reducing deployment overhead.}
+\resumeItem{Managed customer updates via Slack/email for timely feature and bug resolutions.}
+\resumeItem{Networked at industry events, engaging \textbf{100+} qualified leads and presenting to \textbf{200+} attendees.}
+\resumeItemListEnd
+
+
+\resumeSubheading
 {Machine Learning Intern}{Jun. 2023 -- Sep. 2023}
 {MOLOCO, Inc.}{Redwood City, CA}
 \resumeItemListStart
-\resumeItem{Improved ad click through prediction from \textbf{77\%} to \textbf{85\%} AUC with new TensorFlow model + data augmentation}
-\resumeItem{Doubled lookback in continuous training from 14 to 28 days for better model performance}
+\resumeItem{Improved ad click-through prediction from \textbf{77\%} to \textbf{85\%} AUC with new TensorFlow model + data augmentation}
+\resumeItem{Doubled look back in continuous training from 14 to 28 days for better model performance}
 \resumeItem{Utilize control group data with hourly install model prediction for causal inference}
 \resumeItem{Increased cadence of continuous training from once to twice a day for faster model iteration}
 \resumeItemListEnd
@@ -189,49 +196,25 @@
 \resumeItem{Migrated deployment from EC2 to microservices/serverless with MongoDB Atlas and AWS Lambda}
 \resumeItemListEnd
 
-\resumeSubheading
-{Full-stack Web Developer}{Jun. 2020 -- Oct. 2020}
-{Electify Technologies}{Palo Alto, CA}
-\resumeItemListStart
-\resumeItem{Built React.js UI and backend Express.js endpoints for tracking prize redemptions, reading/writing to Firestore}
-\resumeItem{Solved long-standing DEADLINE\_EXCEEDED issue, reducing runtime length by about \textbf{99.2\%}}
-\resumeItemListEnd
-
-\resumeSubheading
-{Software Engineer Intern}{Jun. 2019 -- Aug. 2019}
-{Denali System Co. Ltd}{Mountain View, CA}
-\resumeItemListStart
-\resumeItem{Developed an internal React.js website for uploading and watching employee training videos}
-\resumeItem{Made a Flask backend and used Tus protocol and FFmpeg to upload, transcode, store, and serve video files}
-\resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
-%-----------PROJECTS-----------
-\section{Projects}
+%-----------EDUCATION-----------
+\section{Education}
 \resumeSubHeadingListStart
-\resumeProjectHeading
-{\textbf{\href{https://github.com/recommeddit/backend/tree/experimental}{\underline{Recommeddit}}} $|$ \emph{Python, JavaScript, Kubernetes, FastAPI, spaCy, NLTK, Svelte}}{Jan. 2021 - Jun. 2022}
-\resumeItemListStart
-\resumeItem{Architected a full-stack web app with FastAPI as the backend and Svelte/Tailwind CSS as the frontend}
-\resumeItem{Trained RoBERTa NER model on Reddit comments and used NLTK's Vader for sentiment analysis}
-\resumeItem{Deployed frontend with Netlify and Cloudflare, backend with Nautilus (Kubernetes + GPU cluster)}
-\resumeItemListEnd
-\resumeProjectHeading
-{\textbf{Other projects on \href{https://github.com/SwiftWinds?tab=repositories}{\underline{GitHub}}}}{}
+\resumeSubheading
+{UC Santa Barbara}{3.71 GPA $|$ Aug. 2020 -- Jun. 2024}
+{Bachelor of Science in Computer Science, Technology Management Certificate}{Santa Barbara, CA}
 \resumeSubHeadingListEnd
-
-
 
 %
 %-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
   \small{\item{
-        \textbf{Languages}{: JavaScript, Typescript, HTML, CSS, Python, C/C++, Rust, Zig, C\#, Java, Bash, Kotlin, Dart} \\
-        \textbf{Frameworks}{: React, Vue, Node.js, Express.js, Unity, Arduino, Bootstrap, Tailwind CSS, Svelte} \\
+        \textbf{Languages}{: JavaScript, TypeScript, HTML, CSS, Python, SQL, C/C++, Rust, Zig, C\#, Java, Bash, Kotlin, Dart} \\
+        \textbf{Frameworks}{: React, Vue, Node.js, Express.js, Tailwind CSS, Firebase, Unity, Arduino, Bootstrap, Svelte} \\
         \textbf{Developer Tools}{: Git, Docker, Kubernetes, Google Cloud Platform, AWS, Azure} \\
-        \textbf{Libraries}{: PyTorch, fast.ai, TensorFlow, Keras, NumPy, OpenCV, pandas, Matplotlib, Flask} \\
+        \textbf{Libraries}{: PyTorch, TensorFlow, NumPy, pandas, Matplotlib, FastAPI, Flask, OpenCV, Keras, fast.ai} \\
         }}
 \end{itemize}
 
