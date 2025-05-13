@@ -35,4 +35,4 @@ jobs:
       - name: Commit & push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: chore: generate resume.png preview
+          commit_message: "chore: generate resume.png preview"
